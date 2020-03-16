@@ -4,10 +4,10 @@ import com.github.sawafrolov.itemfinder.models.entities.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Repository
 public class InsertionDaoImpl implements InsertionDao {
 
     @Autowired
@@ -18,7 +18,6 @@ public class InsertionDaoImpl implements InsertionDao {
     public void insertBox(BoxEntity box) {
         Session session = sessionFactory.getCurrentSession();
         session.save(box);
-        session.close();
     }
 
     @Override
@@ -26,6 +25,5 @@ public class InsertionDaoImpl implements InsertionDao {
     public void insertItem(ItemEntity item) {
         Session session = sessionFactory.getCurrentSession();
         session.save(item);
-        session.close();
     }
 }

@@ -25,9 +25,9 @@ public class Main {
     public void prepareDataBase() {
         try {
             Storage storage = reader.readStorage(fileName);
-            int id = storage.getBoxes().get(0).getId();
-            System.out.println(id);
+            System.out.println("Storage was read");
             writer.writeStorage(storage);
+            System.out.println("Storage was written");
         } catch (Exception exc) {
             exc.printStackTrace();
             System.exit(-1);
